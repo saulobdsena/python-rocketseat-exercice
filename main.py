@@ -1,8 +1,8 @@
 """
-Estou fazendo as variáveis em inglês e E/S (Entrada e Saida) em inglês 
+Estou fazendo as variáveis e E/S (Entrada e Saida) em inglês 
 pois estou treinando meu inglês apenas isso
 
-Im doing the variables and the I/O (Input and Output) in english because 
+Im doing the variables and I/O (Input and Output) in english because 
 im treining my english just that
 
 """
