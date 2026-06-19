@@ -15,7 +15,7 @@ The goal of this project is to build a simple **task manager (to-do list)** usin
 
 ## Technologies
 
-- Python 3.13.9
+- Python 3.13.9🐍
 
 ## Status
 
