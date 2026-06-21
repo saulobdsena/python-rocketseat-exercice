@@ -20,13 +20,13 @@ while True:
     print("5. Delete a completed task")
     print("6. End the program")
 
-    response =  int(input("Digite sua escolha "))
+    response =  int(input("Enter your choise  "))
 
     match response:
 
         #Case to add new task to the list 
         case 1:
-            new_task = input("Digite a tarefa: ")
+            new_task = input("Digite a tarefa: ")           
             task_list.append(new_task)
             print(f"Tarefa adicionada: {new_task}")
 
