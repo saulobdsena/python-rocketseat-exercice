@@ -28,7 +28,7 @@ while True:
         case 1:
             new_task = input("Digite a tarefa: ")           
             task_list.append(new_task)
-            print(f"Tarefa adicionada: {new_task}")
+            print(f"Task added: {new_task}")
 
         #Case to show the task list
         case 2:
