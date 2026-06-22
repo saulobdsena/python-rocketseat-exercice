@@ -1,107 +1,110 @@
-"""
-Estou fazendo as variáveis e E/S (Entrada e Saida) em inglês 
-pois estou treinando meu inglês apenas isso
 
-Im doing the variables and I/O (Input and Output) in english because 
-im treining my english just that
+contact_list = []
 
-"""
+def add_contact(contact_list, contact_name, contact_number, contact_email):
+
+    contacts = {"name": contact_name, "number": contact_number, "email": contact_email, "is_fav": False}
+    contact_list.append(contacts)
+    print(f"Contact {contact_name} added to the contact menager")
+    return 
 
 
-task_list = []
+def view_contacts(contact_list):
 
-#Method to add new task in the task_list
-def add_task (task_list, task_name):
-    task = {"task": task_name, "completed": False}
-    task_list.append(task)
-    print(f"Task: {task_name} has been added")
+    for i, contacts in enumerate(contact_list, start=1):
+        favorite = "|★|" if contacts["is_fav"] else "| |"
+        print(f"{i}. {favorite} Name: {contacts["name"]}, Number: {contacts["number"]}, Email: {contacts["email"]}")
+
+def edit_contact(contact_list, contact_index, new_name, new_number, new_email):
+
+    try:
+        contact_list[(int(contact_index) - 1)]["name"] = new_name
+        contact_list[(int(contact_index) - 1)]["number"] = new_number
+        contact_list[(int(contact_index) - 1)]["email"] = new_email
+        print(f"Contact {contact_index} updated to {new_name}, {new_number}, {new_email}")
+
+    except IndexError as e:
+        print("Error: your index is out of range")
+
     return
 
-#Method to view the task list
-def view_tasks (task_list):
+def favorite_contact(contact_list, contact_index):
+    
+    try:
+        if contact_list[(int(contact_index) - 1)]["is_fav"] == False:
+            contact_list[(int(contact_index) - 1)]["is_fav"] = True
+            print(f"Contact {contact_index} is favorite now")
 
-    print("\n Task List")
-
-    for i, task in enumerate(task_list, start=1):
-        status = "✓" if task["completed"] else " "
-        print(f"{i}. [{status}] {task["task"]}")
-
-    return
+        elif contact_list[(int(contact_index) - 1)]["is_fav"] == True:
+            contact_list[(int(contact_index) - 1)]["is_fav"] = False
+            print(f"Contact {contact_index} is not favorite now")
         
-#Method to update the task status
-def update_task(task_list, task_index, new_task_name):
+    except IndexError as e:
+        print(f"Error: your index is out of range")
+
+
+def view_favorite_contacts(contact_list):
+
+    for i, contacts in enumerate(contact_list, start=1):
+        if contacts["is_fav"] == True:
+            favorite = "|★|" if contacts["is_fav"] else "| |"
+            print(f"{i}. {favorite} Name: {contacts["name"]}, Number: {contacts["number"]}, Email: {contacts["email"]}")
+
+def delete_contact(contact_list, contact_index):
 
     try:
-        task_list[(int(task_index) - 1)]["task"] = new_task_name
-        print(f"Task {task_index} updated to {new_task_name}")
-    
-    except IndexError as e:
-        print("Error: your index is out of range")
-
-    return
-
-#Method to complete a task
-def complete_task(task_list, task_index):
-
-    try:
-        task_list[(int(task_index) - 1)]["completed"] = True    
-        print(f"Task {task_index} completed")
+        contact_list.remove(contact_list[(int(contact_index) - 1)])
+        print(f"Contact removed")
 
     except IndexError as e:
-        print("Error: your index is out of range")
+        print(f"Error: your index is out of range")
 
-    return
-
-def detele_completed_tasks(task_list):
-
-    for task in task_list:
-        if task["completed"] == True:
-            task_list.remove(task)
-
-    print("Completed tasks has been deleted")
-    
-    return
 
 
 while True:
 
-    print("\nTask List Menager Menu:")
-    print("1. Add Task")
-    print("2. Show the task list")
-    print("3. Update task")
-    print("4. Complete task")
-    print("5. Delete a completed task")
-    print("6. End the program")
+    print("\n Contact Manager Menu")
+    print("1. Add New Contact")
+    print("2. View Contact List")
+    print("3. Edit Contact")
+    print("4. Favorite/Unfavorite Contact")
+    print("5. Favorite Contact List")
+    print("6. Delete Contact")
+    print("7. Exit")
 
-    response =  int(input("Enter your choise "))
+    response = int(input("Enter "))
 
     match response:
 
-        #Case to add new task to the list 
         case 1:
-            task = input("Enter the task: ")           
-            add_task(task_list, task)
-
-        #Case to show the task list
+            name = input("Contact name: ")
+            number = input("Contact number: ")
+            email = input("Contact email: ")
+            add_contact(contact_list, name, number, email)
+        
         case 2:
-            view_tasks(task_list)
+            view_contacts(contact_list)
 
-        #Case to update the task
         case 3:
-            view_tasks(task_list)
-            task_index = input("Enter the task number do you want update: ")
-            new_task = input("Enter the new task name ")
-            update_task(task_list,task_index,new_task)
+            view_contacts(contact_list)
+            contact_index = input("Which contact do you wanna edit? ")
+            new_name = input("What is the new name? ")
+            new_number = input("What is the new phone? ")
+            new_email = input("What is the new email? ")
+            edit_contact(contact_list, contact_index, new_name, new_number, new_email)
 
-        #Case to complete the task
         case 4:
-           view_tasks(task_list) 
-           task_index = input("Select the task number do you want complete: ")
-           complete_task(task_list, task_index)
+            view_contacts(contact_list)
+            contact_index = input("Who is the contact do you wanna favorite? ")
+            favorite_contact(contact_list,contact_index)
 
         case 5:
-            detele_completed_tasks(task_list)
-            view_tasks(task_list)
+            view_favorite_contacts(contact_list)
 
         case 6:
-            break
+            view_contacts(contact_list)
+            contact_index = input("Who is the contact do you wanna delete? ")
+            delete_contact(contact_list, contact_index)
+
+        case 7:
+            exit
