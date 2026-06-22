@@ -1,21 +1,21 @@
 # 📒 Contact Manager
 
-Um gerenciador de contatos desenvolvido em **Python**, executado pelo terminal. O projeto permite cadastrar, visualizar, editar, favoritar e excluir contatos por meio de um menu interativo.
+A contact manager developed in **Python** and executed through the terminal. The project allows users to add, view, edit, favorite, and delete contacts using an interactive menu.
 
-## 📌 Sobre o projeto
+## 📌 About the Project
 
-O **Contact Manager** foi criado para praticar conceitos fundamentais da linguagem Python, como:
+The **Contact Manager** was created to practice fundamental Python concepts, such as:
 
-* Listas;
-* Dicionários;
-* Funções;
-* Estruturas condicionais;
-* Laços de repetição;
-* Tratamento de exceções;
-* Uso do `match case`;
-* Entrada e saída de dados pelo terminal.
+* Lists;
+* Dictionaries;
+* Functions;
+* Conditional statements;
+* Loops;
+* Exception handling;
+* The `match case` statement;
+* Terminal input and output.
 
-Cada contato é armazenado em um dicionário com as seguintes informações:
+Each contact is stored in a dictionary containing the following information:
 
 ```python
 {
@@ -26,50 +26,50 @@ Cada contato é armazenado em um dicionário com as seguintes informações:
 }
 ```
 
-Os dicionários são adicionados à lista principal de contatos:
+The dictionaries are added to the main contact list:
 
 ```python
 contact_list = []
 ```
 
-## ⚙️ Funcionalidades
+## ⚙️ Features
 
-O sistema possui as seguintes funcionalidades:
+The system provides the following features:
 
-1. **Adicionar um novo contato**
+1. **Add a New Contact**
 
-   * Solicita o nome, número de telefone e e-mail.
-   * Adiciona o contato à lista.
+   * Requests the contact's name, phone number, and email address.
+   * Adds the contact to the list.
 
-2. **Visualizar todos os contatos**
+2. **View All Contacts**
 
-   * Exibe os contatos cadastrados.
-   * Mostra a posição de cada contato na lista.
-   * Indica quais contatos estão marcados como favoritos.
+   * Displays all registered contacts.
+   * Shows each contact's position in the list.
+   * Indicates which contacts are marked as favorites.
 
-3. **Editar um contato**
+3. **Edit a Contact**
 
-   * Permite alterar o nome, número de telefone e e-mail de um contato existente.
+   * Allows the user to update the name, phone number, and email address of an existing contact.
 
-4. **Favoritar ou desfavoritar um contato**
+4. **Favorite or Unfavorite a Contact**
 
-   * Alterna o status de favorito do contato selecionado.
+   * Toggles the favorite status of the selected contact.
 
-5. **Visualizar contatos favoritos**
+5. **View Favorite Contacts**
 
-   * Exibe somente os contatos marcados como favoritos.
+   * Displays only the contacts marked as favorites.
 
-6. **Excluir um contato**
+6. **Delete a Contact**
 
-   * Remove o contato selecionado da lista.
+   * Removes the selected contact from the list.
 
-7. **Sair do programa**
+7. **Exit the Program**
 
-   * Encerra a execução do gerenciador.
+   * Ends the Contact Manager execution.
 
-## 🖥️ Menu do sistema
+## 🖥️ System Menu
 
-Ao executar o programa, o seguinte menu será exibido:
+When the program is executed, the following menu is displayed:
 
 ```text
 Contact Manager Menu
@@ -83,51 +83,51 @@ Contact Manager Menu
 7. Exit
 ```
 
-O usuário deve informar o número correspondente à operação que deseja realizar.
+The user must enter the number corresponding to the desired operation.
 
-## 🚀 Como executar
+## 🚀 How to Run
 
-### Pré-requisitos
+### Requirements
 
-É necessário possuir o **Python 3.10 ou superior**, pois o projeto utiliza a estrutura `match case`.
+You must have **Python 3.10 or a newer version** installed because the project uses the `match case` statement.
 
-Para verificar a versão instalada:
+To check the installed Python version, run:
 
 ```bash
 python --version
 ```
 
-ou:
+Or:
 
 ```bash
 python3 --version
 ```
 
-### Clonando o repositório
+### Clone the Repository
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone REPOSITORY_URL
 ```
 
-Entre na pasta do projeto:
+Enter the project directory:
 
 ```bash
 cd contact-manager
 ```
 
-Execute o programa:
+Run the program:
 
 ```bash
 python main.py
 ```
 
-Em alguns sistemas, pode ser necessário utilizar:
+On some systems, you may need to use:
 
 ```bash
 python3 main.py
 ```
 
-## 📂 Estrutura do projeto
+## 📂 Project Structure
 
 ```text
 contact-manager/
@@ -136,11 +136,11 @@ contact-manager/
 └── README.md
 ```
 
-## 🔧 Funções utilizadas
+## 🔧 Functions
 
 ### `add_contact()`
 
-Adiciona um novo contato à lista.
+Adds a new contact to the list.
 
 ```python
 add_contact(contact_list, contact_name, contact_number, contact_email)
@@ -148,7 +148,7 @@ add_contact(contact_list, contact_name, contact_number, contact_email)
 
 ### `view_contacts()`
 
-Exibe todos os contatos cadastrados.
+Displays all registered contacts.
 
 ```python
 view_contacts(contact_list)
@@ -156,7 +156,7 @@ view_contacts(contact_list)
 
 ### `edit_contact()`
 
-Atualiza os dados de um contato selecionado.
+Updates the information of a selected contact.
 
 ```python
 edit_contact(contact_list, contact_index, new_name, new_number, new_email)
@@ -164,7 +164,7 @@ edit_contact(contact_list, contact_index, new_name, new_number, new_email)
 
 ### `favorite_contact()`
 
-Alterna o contato entre favorito e não favorito.
+Toggles a contact between favorite and non-favorite.
 
 ```python
 favorite_contact(contact_list, contact_index)
@@ -172,7 +172,7 @@ favorite_contact(contact_list, contact_index)
 
 ### `view_favorite_contacts()`
 
-Exibe somente os contatos favoritos.
+Displays only the contacts marked as favorites.
 
 ```python
 view_favorite_contacts(contact_list)
@@ -180,13 +180,13 @@ view_favorite_contacts(contact_list)
 
 ### `delete_contact()`
 
-Remove um contato da lista.
+Removes a contact from the list.
 
 ```python
 delete_contact(contact_list, contact_index)
 ```
 
-## 📝 Exemplo de uso
+## 📝 Usage Example
 
 ```text
 Contact Manager Menu
@@ -207,25 +207,25 @@ Contact email: john@email.com
 Contact John added to the contact manager
 ```
 
-Ao visualizar a lista:
+When viewing the contact list:
 
 ```text
 1. | | Name: John, Number: 99999-9999, Email: john@email.com
 ```
 
-Quando o contato é marcado como favorito:
+When the contact is marked as a favorite:
 
 ```text
 1. |★| Name: John, Number: 99999-9999, Email: john@email.com
 ```
 
-## 🛠️ Tecnologias utilizadas
+## 🛠️ Technologies Used
 
 * Python 3;
 * Terminal;
 * Git;
 * GitHub.
 
-## 🎯 Objetivo
+## 🎯 Purpose
 
-Este projeto tem finalidade educacional e foi desenvolvido para praticar os fundamentos da programação com Python e a organização de um programa baseado em funções.
+This project was developed for educational purposes to practice Python programming fundamentals and the organization of a program based on functions.
