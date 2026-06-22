@@ -229,7 +229,3 @@ Quando o contato é marcado como favorito:
 ## 🎯 Objetivo
 
 Este projeto tem finalidade educacional e foi desenvolvido para praticar os fundamentos da programação com Python e a organização de um programa baseado em funções.
-
-## 👨‍💻 Autor
-
-Desenvolvido como exercício de aprendizagem em Python.
