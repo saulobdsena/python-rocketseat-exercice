@@ -107,4 +107,4 @@ while True:
             delete_contact(contact_list, contact_index)
 
         case 7:
-            exit
+            break
